@@ -174,7 +174,7 @@ export const HeroHeader = () => {
                 <div className="flex items-center justify-between w-full h-full gap-4 lg:gap-8">
                     {/* Brand */}
                     <a href="#" onClick={(e) => { e.preventDefault(); window.location.hash = ''; window.scrollTo(0,0); }} aria-label="home" className="flex items-center group shrink-0">
-                        <Logo size={isScrolled ? 75 : 100} />
+                        <Logo className={isScrolled ? "h-[32px] md:h-[45px] lg:h-[75px]" : "h-[45px] md:h-[60px] lg:h-[100px]"} />
                     </a>
 
                     {/* Desktop Links (Hidden on mobile/tablet) */}

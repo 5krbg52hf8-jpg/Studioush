@@ -196,7 +196,7 @@ export function WaaSSection() {
             span: "col-span-1 md:col-span-2",
             gradient: "from-white/[0.08] to-transparent",
             extra: (
-                <div className="absolute inset-x-0 top-0 bottom-40 opacity-40 group-hover:opacity-100 transition-all duration-700 pointer-events-none flex flex-col items-center justify-start hidden md:flex overflow-hidden pt-12">
+                <div className="absolute inset-x-0 top-0 bottom-0 opacity-40 group-hover:opacity-100 transition-all duration-700 pointer-events-none flex flex-col items-center justify-start hidden md:flex overflow-hidden pt-12">
                     {/* Abstract Browser/App Window */}
                     <div className="w-[80%] max-w-lg h-[120%] rounded-t-xl border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl relative shadow-2xl flex flex-col transform group-hover:scale-105 transition-transform duration-700 ease-out translate-y-8 group-hover:translate-y-2">
                         {/* Top Bar */}
@@ -250,7 +250,7 @@ export function WaaSSection() {
         {
             title: "Soporte Evolutivo",
             desc: "Nos encargamos del código, la seguridad y los servidores. Vos dedicate a escalar tu negocio, nosotros nos aseguramos de que tu tecnología nunca falle.",
-            span: "col-span-1 md:col-span-3",
+            span: "col-span-1 md:col-span-2",
             gradient: "from-white/[0.03] via-white/[0.05] to-transparent",
             extra: (
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.05)_0%,transparent_60%)] pointer-events-none" />
