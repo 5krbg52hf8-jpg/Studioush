@@ -4,8 +4,8 @@ import { MessageCircle } from 'lucide-react'
 
 export function WhatsAppFloating() {
     const [isHovered, setIsHovered] = useState(false)
-    const whatsappNumber = "5491112345678" // User should change this
-    const message = encodeURIComponent("Hola Studio Ush, me gustaría consultar por un proyecto web premium.")
+    const whatsappNumber = "5492901584322" // User requested 2901584322
+    const message = encodeURIComponent("Quiero mas informacion sobre el servicio de diseño web premium")
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`
 
     return (

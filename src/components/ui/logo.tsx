@@ -7,11 +7,19 @@ interface LogoProps {
 
 export function Logo({ className, size = 40 }: LogoProps) {
   return (
-    <div className={cn(
-      "flex items-center justify-center rounded-full border border-white/20 bg-white/5 group-hover:bg-white/10 transition-all duration-500",
-      className
-    )} style={{ width: size, height: size }}>
-      <span className="font-serif font-medium text-white" style={{ fontSize: size * 0.45 }}>U</span>
+    <div 
+      className={cn(
+        "flex items-center justify-center transition-all duration-500",
+        className
+      )} 
+      style={{ height: size }}
+    >
+      <img 
+        src="/studio-ush-logo.png" 
+        alt="Studio Ush" 
+        className="h-full w-auto object-contain drop-shadow-sm pointer-events-none"
+        style={{ height: size }}
+      />
     </div>
   )
 }

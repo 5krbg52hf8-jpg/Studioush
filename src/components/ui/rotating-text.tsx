@@ -25,7 +25,7 @@ export function RotatingText({
   }, [words.length, interval]);
 
     return (
-    <div className={cn("relative inline-flex items-center justify-center overflow-hidden h-[1.3em] w-auto align-bottom px-4", className)}>
+    <div className={cn("relative flex items-center justify-center overflow-hidden h-[1.4em] w-full align-bottom", className)}>
       <AnimatePresence mode="wait">
         <motion.span
           key={words[index]}
@@ -36,15 +36,11 @@ export function RotatingText({
             duration: 0.8,
             ease: [0.16, 1, 0.3, 1], // Custom spring-like easing
           }}
-          className="absolute left-0 right-0 whitespace-nowrap text-white/90 text-center"
+          className="text-white/90 text-center whitespace-nowrap"
         >
           {words[index]}
         </motion.span>
       </AnimatePresence>
-      {/* Invisible placeholder to maintain width based on the longest word */}
-      <span className="invisible whitespace-nowrap" aria-hidden="true">
-        {words.reduce((a, b) => (a.length > b.length ? a : b))}
-      </span>
     </div>
   );
 }

@@ -71,11 +71,10 @@ export function HeroSection() {
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <h1 className="mt-8 max-w-5xl mx-auto text-center text-[2.75rem] leading-[1.1] sm:text-6xl md:text-7xl lg:mt-12 xl:text-[5.5rem] font-medium tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
-                                        Desarrollamos <br className="hidden sm:block" />
-                                        <RotatingText words={rotatingOptions} className="text-white pb-1" />
-                                        <br className="hidden sm:block" />
-                                        desde el Fin del Mundo.
+                                    <h1 className="mt-8 max-w-5xl mx-auto text-center text-[2.75rem] leading-[1.2] sm:text-6xl md:text-7xl lg:mt-12 xl:text-[5.5rem] font-medium tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
+                                        <span className="block">Desarrollamos</span>
+                                        <RotatingText words={rotatingOptions} className="text-white" />
+                                        <span className="block">desde el Fin del Mundo.</span>
                                     </h1>
                                 </AnimatedGroup>
 
@@ -168,25 +167,18 @@ export const HeroHeader = () => {
                 className={cn(
                     "pointer-events-auto relative flex flex-col items-center justify-between transition-all duration-500 ease-in-out",
                     "rounded-[2.5rem] border border-white/15 shadow-[0_16px_64px_rgba(0,0,0,0.6)] bg-black/40 backdrop-blur-3xl",
-                    menuState ? "w-[92%] md:w-[700px] p-6 overflow-visible" : (isScrolled ? "w-[90%] md:w-fit px-6 md:px-8 py-3 overflow-hidden" : "w-[90%] md:max-w-[850px] px-6 md:px-10 py-3.5 md:py-4 overflow-hidden")
+                    menuState ? "w-[92%] lg:w-[700px] p-4 lg:p-5 overflow-visible" : (isScrolled ? "w-[90%] lg:max-w-[850px] px-5 lg:px-8 py-1.5 overflow-hidden" : "w-[90%] lg:max-w-[850px] px-6 lg:px-10 py-2 lg:py-2.5 overflow-hidden")
                 )}
             >
                 {/* Top Row (Always visible) */}
-                <div className="flex items-center justify-between w-full h-full gap-4 md:gap-8">
+                <div className="flex items-center justify-between w-full h-full gap-4 lg:gap-8">
                     {/* Brand */}
-                    <a href="#" onClick={(e) => { e.preventDefault(); window.location.hash = ''; window.scrollTo(0,0); }} aria-label="home" className="flex items-center gap-3 group shrink-0">
-                        <Logo size={isScrolled ? 32 : 40} />
-                        {/* Brand Name */}
-                        <span className={cn(
-                            "font-serif font-light uppercase text-white drop-shadow-md transition-all duration-500 group-hover:tracking-[0.25em]",
-                            isScrolled ? "text-[15px] tracking-[0.15em]" : "text-xl tracking-[0.2em]"
-                        )}>
-                            Studio Ush
-                        </span>
+                    <a href="#" onClick={(e) => { e.preventDefault(); window.location.hash = ''; window.scrollTo(0,0); }} aria-label="home" className="flex items-center group shrink-0">
+                        <Logo size={isScrolled ? 75 : 100} />
                     </a>
 
-                    {/* Desktop Links (Hidden on mobile) */}
-                    <div className="hidden md:flex items-center gap-6 lg:gap-10">
+                    {/* Desktop Links (Hidden on mobile/tablet) */}
+                    <div className="hidden lg:flex items-center gap-6 lg:gap-10">
                         <ul className="flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-medium text-white/70">
                             {menuItems.map(item => (
                                 <li key={item.name}>
@@ -207,17 +199,17 @@ export const HeroHeader = () => {
                         </MagneticButton>
                     </div>
 
-                    {/* Mobile Toggle Button */}
+                    {/* Mobile/Tablet Toggle Button */}
                     <button 
                         onClick={() => setMenuState(!menuState)} 
-                        className="md:hidden flex items-center justify-center p-2 text-white/80 hover:text-white transition-colors"
+                        className="lg:hidden flex items-center justify-center p-2 text-white/80 hover:text-white transition-colors"
                         aria-label="Toggle menu"
                     >
                         {menuState ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
 
-                {/* Mobile Expanded Menu (Morphing animation) */}
+                {/* Mobile/Tablet Expanded Menu (Morphing animation) */}
                 <AnimatePresence>
                     {menuState && (
                         <motion.div
@@ -225,7 +217,7 @@ export const HeroHeader = () => {
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="w-full md:hidden flex flex-col overflow-visible"
+                            className="w-full lg:hidden flex flex-col overflow-visible"
                         >
                              <div className="border-t border-white/10 w-full pt-8 mt-4 flex flex-col gap-8 pb-6">
                                 <ul className="flex flex-col gap-6 text-center">

@@ -148,10 +148,11 @@ export function StatsSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md"
                         >
-                            <p className="text-6xl font-light text-white mb-2">0%</p>
-                            <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Plantillas Genéricas</p>
+                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full">
+                                <p className="text-6xl font-light text-white mb-2">0%</p>
+                                <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Plantillas Genéricas</p>
+                            </div>
                         </motion.div>
 
                         {/* Stat 2 */}
@@ -160,10 +161,11 @@ export function StatsSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md"
                         >
-                            <p className="text-6xl font-light text-white mb-2">&lt; 3s</p>
-                            <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Tiempo de Carga</p>
+                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full">
+                                <p className="text-6xl font-light text-white mb-2">&lt; 3s</p>
+                                <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Tiempo de Carga</p>
+                            </div>
                         </motion.div>
 
                         {/* Stat 3 */}
@@ -172,10 +174,12 @@ export function StatsSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.8, delay: 0.6 }}
-                            className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center md:col-span-2 glass backdrop-blur-md"
+                            className="md:col-span-2"
                         >
-                            <p className="text-6xl font-light text-white mb-2">100%</p>
-                            <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Arquitectura Digital a Medida</p>
+                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full">
+                                <p className="text-6xl font-light text-white mb-2">100%</p>
+                                <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Arquitectura Digital a Medida</p>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -189,7 +193,7 @@ export function WaaSSection() {
         {
             title: "Tu Vidriera 24/7",
             desc: "Diseñamos experiencias inmersivas que comunican autoridad al instante. Cero plantillas, 100% visuales a medida para que te perciban como el referente que sos.",
-            span: "col-span-1 md:col-span-2 md:row-span-2",
+            span: "col-span-1 md:col-span-2",
             gradient: "from-white/[0.08] to-transparent",
             extra: (
                 <div className="absolute inset-x-0 top-0 bottom-40 opacity-40 group-hover:opacity-100 transition-all duration-700 pointer-events-none flex flex-col items-center justify-start hidden md:flex overflow-hidden pt-12">
@@ -276,25 +280,26 @@ export function WaaSSection() {
                     {services.map((service, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.8, delay: i * 0.15 }}
-                            className={cn(
-                                "group relative overflow-hidden rounded-[2rem] bg-white/[0.02] border border-white/10 p-10 md:p-14 transition-all duration-700 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] backdrop-blur-sm flex flex-col justify-end",
-                                service.span
-                            )}
+                            className={cn(service.span)}
                         >
-                            <div className={cn("absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0", service.gradient)} />
-                            {service.extra}
-                            
-                            <h3 className="text-2xl md:text-3xl text-white font-medium mb-6 relative z-10 flex items-start justify-between gap-4">
-                                <span>{service.title}</span>
-                                <span className="text-white/20 font-serif italic text-sm group-hover:text-white/60 transition-colors shrink-0">0{i + 1}</span>
-                            </h3>
-                            <p className="text-white/50 text-lg font-light leading-relaxed max-w-2xl relative z-10 group-hover:text-white/80 transition-colors duration-500">
-                                {service.desc}
-                            </p>
+                            <div className={cn(
+                                "group relative overflow-hidden rounded-[2rem] bg-white/[0.02] border border-white/10 p-10 md:p-14 transition-all duration-700 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] backdrop-blur-sm flex flex-col justify-end h-full"
+                            )}>
+                                <div className={cn("absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0", service.gradient)} />
+                                {service.extra}
+                                
+                                <h3 className="text-2xl md:text-3xl text-white font-medium mb-6 relative z-10 flex items-start justify-between gap-4">
+                                    <span>{service.title}</span>
+                                    <span className="text-white/20 font-serif italic text-sm group-hover:text-white/60 transition-colors shrink-0">0{i + 1}</span>
+                                </h3>
+                                <p className="text-white/50 text-lg font-light leading-relaxed max-w-2xl relative z-10 group-hover:text-white/80 transition-colors duration-500">
+                                    {service.desc}
+                                </p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
@@ -308,7 +313,7 @@ export function WaaSSection() {
                 >
                     <MagneticButton distance={0.3}>
                         <a 
-                            href="https://wa.me/5491112345678" 
+                            href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="group relative flex items-center gap-4 bg-white/[0.03] border border-white/10 px-10 py-5 rounded-full hover:bg-white/10 hover:border-white/20 transition-all duration-500 glass"
@@ -411,7 +416,7 @@ export function ProcessSection() {
                 >
                     <MagneticButton distance={0.3}>
                         <a 
-                            href="https://wa.me/5491112345678" 
+                            href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="relative px-12 py-6 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform duration-500 shadow-[0_20px_50px_rgba(255,255,255,0.1)]"
@@ -559,7 +564,7 @@ export function FooterSection() {
                     </p>
                     
                     <MagneticButton distance={0.5}>
-                        <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" className="block bg-white/5 rounded-full p-2 border border-white/10 glass backdrop-blur-md hover:border-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-700">
+                        <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" target="_blank" rel="noopener noreferrer" className="block bg-white/5 rounded-full p-2 border border-white/10 glass backdrop-blur-md hover:border-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-700">
                             <ShinyButton className="px-12 py-6 text-sm uppercase tracking-widest font-medium">Agendar Sesión Estratégica</ShinyButton>
                         </a>
                     </MagneticButton>
@@ -568,11 +573,8 @@ export function FooterSection() {
                 {/* Footer Links */}
                 <div className="w-full border-t border-white/10 pt-16 pb-8 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-6 relative">
                     <div className="flex flex-col items-center md:items-start gap-4">
-                        <a href="/" className="flex items-center gap-4 group">
-                            <Logo size={48} className="group-hover:scale-105 transition-transform duration-500" />
-                            <span className="font-serif font-light uppercase text-white drop-shadow-md transition-all duration-500 group-hover:tracking-[0.25em] text-2xl tracking-[0.2em]">
-                                Studio Ush
-                            </span>
+                        <a href="/" className="flex items-center group">
+                            <Logo size={96} className="group-hover:scale-105 transition-transform duration-500" />
                         </a>
                         <p className="text-[10px] uppercase tracking-[0.2em] text-white/30 mt-2">
                             © {new Date().getFullYear()} Studio Ush.
@@ -581,13 +583,13 @@ export function FooterSection() {
                     
                     <div className="flex flex-col items-center md:items-end gap-6">
                         <div className="flex gap-6 text-white/50">
-                            <a href="#" className="hover:text-white hover:-translate-y-1 transition-all duration-300">
+                            <a href="https://instagram.com/studio_ush" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:-translate-y-1 transition-all duration-300">
                                 <span className="sr-only">Instagram</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                             </a>
-                            <a href="#" className="hover:text-white hover:-translate-y-1 transition-all duration-300">
-                                <span className="sr-only">LinkedIn</span>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            <a href="https://facebook.com/studioush." target="_blank" rel="noopener noreferrer" className="hover:text-white hover:-translate-y-1 transition-all duration-300">
+                                <span className="sr-only">Facebook</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                             </a>
                             <a href="#" className="hover:text-white hover:-translate-y-1 transition-all duration-300">
                                 <span className="sr-only">Behance</span>

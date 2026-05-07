@@ -16,13 +16,13 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start 0.8", "start 0.2"],
+    offset: ["start 0.85", "end 0.6"],
   });
   const words = text.split(" ");
 
   return (
-    <div ref={targetRef} className={cn("relative z-0 min-h-[120vh]", className)}>
-      <div className="sticky top-0 mx-auto flex h-[100vh] max-w-5xl items-center bg-transparent px-[1rem]">
+    <div ref={targetRef} className={cn("relative z-0 min-h-[150vh]", className)}>
+      <div className="sticky top-0 mx-auto flex h-[100dvh] max-w-5xl items-center bg-transparent px-[1rem]">
         <p className="flex flex-wrap p-5 text-3xl font-light text-white/20 md:p-8 md:text-5xl lg:p-10 lg:text-6xl xl:text-7xl">
           {words.map((word, i) => {
             const start = i / words.length;
@@ -52,7 +52,7 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
       <span className="absolute opacity-10">{children}</span>
       <motion.span
         style={{ opacity: opacity }}
-        className="text-white drop-shadow-lg"
+        className="text-white drop-shadow-lg will-change-[opacity]"
       >
         {children}
       </motion.span>
