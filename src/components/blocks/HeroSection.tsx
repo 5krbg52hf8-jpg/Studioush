@@ -92,7 +92,7 @@ export function HeroSection() {
                                     className="mt-12 flex flex-col items-center justify-center gap-6 md:flex-row">
                                     <MagneticButton distance={0.4}>
                                         <div key={1} className="bg-white/5 rounded-full p-1 border border-white/10 glass backdrop-blur-md">
-                                            <ShinyButton><a href="https://wa.me/5491112345678" onClick={openWhatsApp}>Postular mi Marca</a></ShinyButton>
+                                            <ShinyButton><a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Postular mi Marca</a></ShinyButton>
                                         </div>
                                     </MagneticButton>
                                     <MagneticButton distance={0.3}>
@@ -120,7 +120,7 @@ export const menuItems = [
 
 export const openWhatsApp = (e?: React.MouseEvent<HTMLAnchorElement>) => {
     if (e) e.preventDefault()
-    const whatsappUrl = "https://wa.me/5491112345678?text=Hola%20Studio%20Ush%2C%20me%20gustar%C3%ADa%20consultar%20por%20un%20proyecto%20web%20premium."
+    const whatsappUrl = "https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium"
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
 }
 
@@ -174,7 +174,7 @@ export const HeroHeader = () => {
                 <div className="flex items-center justify-between w-full h-full gap-4 lg:gap-8">
                     {/* Brand */}
                     <a href="#" onClick={(e) => { e.preventDefault(); window.location.hash = ''; window.scrollTo(0,0); }} aria-label="home" className="flex items-center group shrink-0">
-                        <Logo className={isScrolled ? "h-[32px] md:h-[45px] lg:h-[75px]" : "h-[45px] md:h-[60px] lg:h-[100px]"} />
+                        <Logo className={isScrolled ? "h-[40px] md:h-[50px] lg:h-[75px]" : "h-[55px] md:h-[70px] lg:h-[100px]"} />
                     </a>
 
                     {/* Desktop Links (Hidden on mobile/tablet) */}
@@ -194,7 +194,7 @@ export const HeroHeader = () => {
                         </ul>
                         <MagneticButton distance={0.2}>
                             <Button asChild size="sm" className="rounded-full bg-white text-black hover:bg-gray-200 shadow-lg text-[10px] uppercase tracking-widest px-6 transition-transform hover:scale-105">
-                                <a href="https://wa.me/5491112345678" onClick={openWhatsApp}>Contactar</a>
+                                <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Contactar</a>
                             </Button>
                         </MagneticButton>
                     </div>
@@ -234,7 +234,7 @@ export const HeroHeader = () => {
                                     ))}
                                 </ul>
                                 <Button asChild className="rounded-full bg-white text-black w-full text-xs uppercase tracking-widest py-7 font-bold shadow-2xl mt-2">
-                                    <a href="https://wa.me/5491112345678" onClick={openWhatsApp}>Contactar</a>
+                                    <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Contactar</a>
                                 </Button>
                             </div>
                         </motion.div>

@@ -253,7 +253,43 @@ export function WaaSSection() {
             span: "col-span-1 md:col-span-2",
             gradient: "from-white/[0.03] via-white/[0.05] to-transparent",
             extra: (
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.05)_0%,transparent_60%)] pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 bottom-0 opacity-40 group-hover:opacity-100 transition-all duration-700 pointer-events-none flex flex-col items-center justify-start hidden md:flex overflow-hidden pt-12">
+                    {/* Abstract Server/Infrastructure Graphic */}
+                    <div className="w-[80%] max-w-lg h-[120%] rounded-t-xl border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl relative shadow-2xl flex flex-col transform group-hover:scale-105 transition-transform duration-700 ease-out translate-y-8 group-hover:translate-y-2 p-6 gap-4">
+                        {/* Server Rack 1 */}
+                        <div className="w-full h-16 rounded-lg border border-white/10 bg-gradient-to-r from-white/[0.05] to-transparent relative overflow-hidden flex items-center px-6 gap-4">
+                            <div className="w-2 h-2 rounded-full bg-green-500/50 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
+                            <div className="w-2 h-2 rounded-full bg-white/20" />
+                            <div className="w-2 h-2 rounded-full bg-white/20" />
+                            <div className="flex-1" />
+                            <div className="h-2 w-1/3 rounded-full bg-white/5" />
+                        </div>
+                        {/* Server Rack 2 */}
+                        <div className="w-full h-16 rounded-lg border border-white/10 bg-gradient-to-r from-white/[0.05] to-transparent relative overflow-hidden flex items-center px-6 gap-4">
+                            <div className="w-2 h-2 rounded-full bg-green-500/50 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]" style={{ animationDelay: '0.5s' }} />
+                            <div className="w-2 h-2 rounded-full bg-white/20" />
+                            <div className="w-2 h-2 rounded-full bg-white/20" />
+                            <div className="flex-1" />
+                            <div className="h-2 w-1/4 rounded-full bg-white/5" />
+                        </div>
+                        {/* Server Rack 3 */}
+                        <div className="w-full h-16 rounded-lg border border-white/10 bg-gradient-to-r from-white/[0.05] to-transparent relative overflow-hidden flex items-center px-6 gap-4">
+                            <div className="w-2 h-2 rounded-full bg-blue-500/50 animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.5)]" style={{ animationDelay: '1s' }} />
+                            <div className="w-2 h-2 rounded-full bg-white/20" />
+                            <div className="w-2 h-2 rounded-full bg-white/20" />
+                            <div className="flex-1" />
+                            <div className="h-2 w-1/2 rounded-full bg-white/5" />
+                        </div>
+                        {/* Code snippets */}
+                        <div className="mt-4 flex flex-col gap-3">
+                            <div className="h-2 w-1/2 rounded-full bg-white/10" />
+                            <div className="h-2 w-3/4 rounded-full bg-white/5" />
+                        </div>
+                        
+                        {/* Ambient Glow */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-500/5 blur-3xl -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                    </div>
+                </div>
             )
         }
     ]
@@ -437,9 +473,17 @@ export function PortfolioSection() {
     // Transform vertical scroll to horizontal scroll
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"])
 
+    const [isDesktop, setIsDesktop] = React.useState(true)
+    React.useEffect(() => {
+        const checkDesktop = () => setIsDesktop(window.innerWidth >= 768)
+        checkDesktop()
+        window.addEventListener('resize', checkDesktop)
+        return () => window.removeEventListener('resize', checkDesktop)
+    }, [])
+
     return (
-        <section id="portfolio" ref={targetRef} className="w-full bg-[#050505] relative z-20 h-[300vh]">
-            <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        <section id="portfolio" ref={targetRef} className={cn("w-full bg-[#050505] relative z-20", isDesktop ? "h-[300vh]" : "py-24")}>
+            <div className={cn("flex flex-col justify-center overflow-hidden", isDesktop ? "sticky top-0 h-screen" : "relative")}>
                 <TopographyPattern className="opacity-15" />
                 
                 <div className="max-w-7xl mx-auto px-6 w-full mb-12 relative z-10">
@@ -455,24 +499,24 @@ export function PortfolioSection() {
                 </div>
 
                 <div className="flex items-center px-6 md:px-[10vw]">
-                    <motion.div style={{ x }} className="flex gap-8 md:gap-16">
+                    <motion.div style={isDesktop ? { x } : {}} className={cn("flex w-full", isDesktop ? "gap-8 md:gap-16" : "flex-col gap-12")}>
                         {/* Project 1 */}
-                        <div className="group relative w-[85vw] md:w-[60vw] h-[55vh] md:h-[70vh] shrink-0 overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl flex flex-col justify-end">
+                        <div className="group relative w-full md:w-[60vw] h-[60vh] md:h-[70vh] shrink-0 overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl flex flex-col justify-end">
                             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors duration-700 z-10" />
                             <img 
                                 src="/portfolio-1.jpg" 
                                 alt="Arakur Hospitality" 
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                             />
-                            <div className="relative z-20 p-10 md:p-16 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent">
-                                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                            <div className="relative z-20 p-8 md:p-16 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent">
+                                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
                                     <div>
-                                        <p className="text-white/70 tracking-[0.3em] uppercase text-[10px] mb-4 font-semibold">Hospitalidad Premium</p>
-                                        <h3 className="text-3xl md:text-5xl text-white font-medium mb-6">Arakur Resort</h3>
-                                        <p className="text-white/60 font-light max-w-lg leading-relaxed hidden md:block">Rediseño integral de la experiencia de reserva. Se incrementaron las reservas directas en un 42% reduciendo la dependencia de agencias de terceros.</p>
+                                        <p className="text-white/70 tracking-[0.3em] uppercase text-[10px] mb-3 md:mb-4 font-semibold">Hospitalidad Premium</p>
+                                        <h3 className="text-3xl md:text-5xl text-white font-medium mb-4 md:mb-6">Arakur Resort</h3>
+                                        <p className="text-white/60 font-light max-w-lg leading-relaxed text-sm md:text-base">Rediseño integral de la experiencia de reserva. Se incrementaron las reservas directas en un 42% reduciendo la dependencia de agencias de terceros.</p>
                                     </div>
-                                    <div className="text-left md:text-right shrink-0">
-                                        <p className="text-4xl md:text-5xl font-light text-white mb-2">+42%</p>
+                                    <div className="text-left md:text-right shrink-0 mt-4 md:mt-0">
+                                        <p className="text-4xl md:text-5xl font-light text-white mb-1 md:mb-2">+42%</p>
                                         <p className="text-[10px] uppercase tracking-widest text-white/50">Conversión Directa</p>
                                     </div>
                                 </div>
@@ -480,22 +524,22 @@ export function PortfolioSection() {
                         </div>
 
                         {/* Project 2 */}
-                        <div className="group relative w-[85vw] md:w-[60vw] h-[55vh] md:h-[70vh] shrink-0 overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl flex flex-col justify-end">
+                        <div className="group relative w-full md:w-[60vw] h-[60vh] md:h-[70vh] shrink-0 overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl flex flex-col justify-end">
                             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors duration-700 z-10" />
                             <img 
                                 src="/portfolio-2.jpg" 
                                 alt="Ice & Fire Watches" 
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                             />
-                            <div className="relative z-20 p-10 md:p-16 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent">
-                                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                            <div className="relative z-20 p-8 md:p-16 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent">
+                                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
                                     <div>
-                                        <p className="text-white/70 tracking-[0.3em] uppercase text-[10px] mb-4 font-semibold">E-Commerce Premium</p>
-                                        <h3 className="text-3xl md:text-5xl text-white font-medium mb-6">Ice & Fire</h3>
-                                        <p className="text-white/60 font-light max-w-lg leading-relaxed hidden md:block">Plataforma e-commerce inmersiva con renderizado 3D de productos. El tiempo medio en la página aumentó a 4 minutos.</p>
+                                        <p className="text-white/70 tracking-[0.3em] uppercase text-[10px] mb-3 md:mb-4 font-semibold">E-Commerce Premium</p>
+                                        <h3 className="text-3xl md:text-5xl text-white font-medium mb-4 md:mb-6">Ice & Fire</h3>
+                                        <p className="text-white/60 font-light max-w-lg leading-relaxed text-sm md:text-base">Plataforma e-commerce inmersiva con renderizado 3D de productos. El tiempo medio en la página aumentó a 4 minutos.</p>
                                     </div>
-                                    <div className="text-left md:text-right shrink-0">
-                                        <p className="text-4xl md:text-5xl font-light text-white mb-2">4m</p>
+                                    <div className="text-left md:text-right shrink-0 mt-4 md:mt-0">
+                                        <p className="text-4xl md:text-5xl font-light text-white mb-1 md:mb-2">4m</p>
                                         <p className="text-[10px] uppercase tracking-widest text-white/50">Tiempo de Retención</p>
                                     </div>
                                 </div>
