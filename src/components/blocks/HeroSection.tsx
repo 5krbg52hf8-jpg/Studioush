@@ -42,7 +42,7 @@ export function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <main ref={containerRef} className="overflow-hidden min-h-screen bg-[#0a0a0a] relative flex items-center pt-32 md:pt-20">
+            <main ref={containerRef} className="relative min-h-[100dvh] bg-[#0a0a0a] flex flex-col justify-center pt-32 pb-24 md:pt-20 overflow-hidden">
                 {/* Backgrounds - Ushuaia & Dark Overlay */}
                 <motion.div 
                     style={{ y, opacity }}
@@ -92,7 +92,7 @@ export function HeroSection() {
                                     className="mt-12 flex flex-col items-center justify-center gap-6 md:flex-row">
                                     <MagneticButton distance={0.4}>
                                         <div key={1} className="bg-white/5 rounded-full p-1 border border-white/10 glass backdrop-blur-md">
-                                            <ShinyButton><a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Postular mi Marca</a></ShinyButton>
+                                            <ShinyButton><a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Solicitar Información</a></ShinyButton>
                                         </div>
                                     </MagneticButton>
                                     <MagneticButton distance={0.3}>
@@ -194,7 +194,7 @@ export const HeroHeader = () => {
                         </ul>
                         <MagneticButton distance={0.2}>
                             <Button asChild size="sm" className="rounded-full bg-white text-black hover:bg-gray-200 shadow-lg text-[10px] uppercase tracking-widest px-6 transition-transform hover:scale-105">
-                                <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Contactar</a>
+                                <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Agendar Sesión</a>
                             </Button>
                         </MagneticButton>
                     </div>
@@ -233,8 +233,8 @@ export const HeroHeader = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <Button asChild className="rounded-full bg-white text-black w-full text-xs uppercase tracking-widest py-7 font-bold shadow-2xl mt-2">
-                                    <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Contactar</a>
+                                <Button asChild className="rounded-full bg-white text-black w-full text-xs uppercase tracking-widest py-5 font-bold shadow-2xl mt-2">
+                                    <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Agendar Sesión</a>
                                 </Button>
                             </div>
                         </motion.div>

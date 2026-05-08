@@ -116,7 +116,7 @@ export function ProblemSection() {
     return (
         <section id="agency" className="w-full bg-[#0a0a0a] relative z-20">
             <TopographyPattern className="opacity-15" />
-            <TextRevealByWord text="Ofrecés un servicio de primer nivel. Pero si tu web actual no lo refleja, estás perdiendo a tus mejores clientes." />
+            <TextRevealByWord text="Tu marca es de primer nivel. Pero si tu web no transmite esa autoridad, le estás regalando tus mejores clientes a la competencia." />
         </section>
     )
 }
@@ -134,7 +134,7 @@ export function StatsSection() {
                         transition={{ duration: 1 }}
                     >
                         <h2 className="text-4xl md:text-5xl font-light text-white leading-tight mb-8">
-                            En el mercado premium, una web lenta <span className="font-serif italic text-white/50">te cuesta ventas todos los días.</span>
+                            En el mercado premium, una web lenta <span className="font-serif italic text-white">te cuesta ventas todos los días.</span>
                         </h2>
                         <p className="text-white/60 text-lg font-light leading-relaxed max-w-xl">
                             Las plantillas genéricas destruyen tu posicionamiento. Desarrollamos con ingeniería de ultra-rendimiento para que la experiencia digital de tus clientes esté a la altura de tu servicio real.
@@ -601,7 +601,7 @@ export function FooterSection() {
 
                     <h2 className="text-5xl md:text-7xl font-light text-white tracking-tight mb-8 drop-shadow-2xl">
                         Dejá de competir por precio.<br/>
-                        <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40">Empezá a competir por autoridad.</span>
+                        <span className="font-serif italic text-white">Empezá a competir por autoridad.</span>
                     </h2>
                     <p className="text-white/50 text-lg font-light leading-relaxed max-w-2xl mx-auto mb-16">
                         Trabajamos con dueños de negocio que entienden el valor de una primera impresión impecable. Si buscás una web que justifique tus tarifas, hablemos.
@@ -609,7 +609,7 @@ export function FooterSection() {
                     
                     <MagneticButton distance={0.5}>
                         <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" target="_blank" rel="noopener noreferrer" className="block bg-white/5 rounded-full p-2 border border-white/10 glass backdrop-blur-md hover:border-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-700">
-                            <ShinyButton className="px-12 py-6 text-sm uppercase tracking-widest font-medium">Agendar Sesión Estratégica</ShinyButton>
+                            <ShinyButton className="px-12 py-4 text-sm uppercase tracking-widest font-medium">Elevar mi Marca</ShinyButton>
                         </a>
                     </MagneticButton>
                 </motion.div>
