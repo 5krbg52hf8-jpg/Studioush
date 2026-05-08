@@ -20,21 +20,30 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
   });
   const words = text.split(" ");
 
+  // Fade in when entering, fade out when leaving — text visible during scroll
+  const panelOpacity = useTransform(scrollYProgress, [0, 0.05, 0.9, 1], [0, 1, 1, 0]);
+
   return (
-    <div ref={targetRef} className={cn("relative z-0 min-h-[180vh]", className)}>
-      <div className="sticky top-0 mx-auto flex h-[100dvh] max-w-5xl items-center bg-transparent px-[1rem]">
-        <p className="flex flex-wrap p-5 text-3xl font-light text-white/20 md:p-8 md:text-5xl lg:p-10 lg:text-6xl xl:text-7xl">
+    <div ref={targetRef} className={cn("relative z-0 h-[300vh]", className)}>
+      {/* Fixed panel — replaces sticky to avoid overflow ancestor issues */}
+      <motion.div
+        style={{ opacity: panelOpacity }}
+        className="fixed top-0 left-0 right-0 h-[100dvh] flex items-center justify-center z-30 pointer-events-none bg-[#0a0a0a]"
+      >
+        <p className="flex flex-wrap max-w-5xl p-5 text-3xl font-light text-white/20 md:p-8 md:text-5xl lg:p-10 lg:text-6xl xl:text-7xl">
           {words.map((word, i) => {
-            const start = i / words.length;
-            const end = start + 1 / words.length;
+            // Map each word to a compressed range (15%-85% of scroll)
+            // This makes the text illuminate faster
+            const wordStart = 0.15 + (i / words.length) * 0.7;
+            const wordEnd = wordStart + (1 / words.length) * 0.7;
             return (
-              <Word key={i} progress={scrollYProgress} range={[start, end]}>
+              <Word key={i} progress={scrollYProgress} range={[wordStart, wordEnd]}>
                 {word}
               </Word>
             );
           })}
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

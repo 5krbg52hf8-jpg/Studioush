@@ -36,7 +36,7 @@ export function RotatingText({
             duration: 0.8,
             ease: [0.16, 1, 0.3, 1], // Custom spring-like easing
           }}
-          className="text-white/90 text-center whitespace-nowrap"
+          className="text-gold text-center whitespace-nowrap"
         >
           {words[index]}
         </motion.span>

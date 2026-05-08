@@ -7,6 +7,7 @@ import { cn } from '../../lib/utils'
 import { Logo } from '../ui/logo'
 import { TopographyPattern } from '../ui/topography-pattern'
 import { TextRevealByWord } from '../ui/text-reveal'
+import { RotatingText } from '../ui/rotating-text'
 
 // --- Tech Stack Icons ---
 const NextIcon = () => (
@@ -144,40 +145,40 @@ export function StatsSection() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Stat 1 */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
+                            transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.3 }}
                         >
-                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full">
-                                <p className="text-6xl font-light text-white mb-2">0%</p>
+                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full hover:border-[var(--gold)]/30 hover:shadow-[0_0_40px_rgba(201,169,110,0.08)] transition-all duration-700 group">
+                                <p className="text-6xl font-light text-white mb-2 group-hover:text-gold transition-colors duration-500">0%</p>
                                 <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Plantillas Genéricas</p>
                             </div>
                         </motion.div>
 
                         {/* Stat 2 */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
+                            transition={{ duration: 0.8, delay: 0.4, type: "spring", bounce: 0.3 }}
                         >
-                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full">
-                                <p className="text-6xl font-light text-white mb-2">&lt; 3s</p>
+                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full hover:border-[var(--gold)]/30 hover:shadow-[0_0_40px_rgba(201,169,110,0.08)] transition-all duration-700 group">
+                                <p className="text-6xl font-light text-white mb-2 group-hover:text-gold transition-colors duration-500">&lt; 3s</p>
                                 <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Tiempo de Carga</p>
                             </div>
                         </motion.div>
 
                         {/* Stat 3 */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.8, delay: 0.6 }}
+                            transition={{ duration: 0.8, delay: 0.6, type: "spring", bounce: 0.3 }}
                             className="md:col-span-2"
                         >
-                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full">
-                                <p className="text-6xl font-light text-white mb-2">100%</p>
+                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full hover:border-[var(--gold)]/30 hover:shadow-[0_0_40px_rgba(201,169,110,0.08)] transition-all duration-700 group">
+                                <p className="text-6xl font-light text-white mb-2 group-hover:text-gold transition-colors duration-500">100%</p>
                                 <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Arquitectura Digital a Medida</p>
                             </div>
                         </motion.div>
@@ -602,9 +603,16 @@ export function FooterSection() {
                     className="text-center mb-32"
                 >
 
-                    <h2 className="text-5xl md:text-7xl font-light text-white tracking-tight mb-8 drop-shadow-2xl">
+                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-light text-white tracking-tight mb-8 drop-shadow-2xl">
                         Dejá de competir por precio.<br/>
-                        <span className="font-serif italic text-gold">Empezá a competir por autoridad.</span>
+                        <span className="font-serif italic text-gold inline-flex flex-wrap items-baseline gap-x-3 sm:gap-x-4">
+                            Empezá a competir por
+                            <RotatingText 
+                                words={["autoridad.", "calidad.", "presencia.", "impacto.", "excelencia."]} 
+                                interval={2500}
+                                className="inline-flex !h-[1.2em] !w-auto text-gold"
+                            />
+                        </span>
                     </h2>
                     <p className="text-white/50 text-lg font-light leading-relaxed max-w-2xl mx-auto mb-16">
                         Trabajamos con dueños de negocio que entienden el valor de una primera impresión impecable. Si buscás una web que justifique tus tarifas, hablemos.

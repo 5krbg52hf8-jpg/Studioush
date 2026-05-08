@@ -71,15 +71,15 @@ export function HeroSection() {
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <h1 className="mt-8 max-w-5xl mx-auto text-center text-[2.75rem] leading-[1.2] sm:text-6xl md:text-7xl lg:mt-12 xl:text-[5.5rem] font-medium tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
+                                    <h1 className="mt-6 max-w-5xl mx-auto text-center text-[2.25rem] leading-[1.15] sm:text-6xl md:text-7xl lg:mt-12 xl:text-[5.5rem] font-medium tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
                                         <span className="block">Desarrollamos</span>
-                                        <RotatingText words={rotatingOptions} className="text-white" />
+                                        <RotatingText words={rotatingOptions} className="text-gold" />
                                         <span className="block">desde el Fin del Mundo.</span>
                                     </h1>
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <p className="mx-auto mt-8 max-w-2xl text-balance text-lg md:text-xl text-white font-light leading-relaxed drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+                                    <p className="mx-auto mt-6 max-w-2xl text-balance text-base md:text-xl text-white font-light leading-relaxed drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
                                         Diseño web a medida y posicionamiento premium para negocios que no compiten por precio.
                                     </p>
                                 </AnimatedGroup>
