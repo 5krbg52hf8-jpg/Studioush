@@ -35,7 +35,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-background font-sans text-foreground selection:bg-white/20 selection:text-white scroll-smooth">
+    <div className="min-h-screen w-full bg-background font-sans text-foreground selection:bg-white/20 selection:text-white scroll-smooth">
       <HeroSection />
       <AuthorityRibbon />
       <ProblemSection />

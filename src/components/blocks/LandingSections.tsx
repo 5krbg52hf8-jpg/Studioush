@@ -468,10 +468,13 @@ export function ProcessSection() {
 
 export function PortfolioSection() {
     const targetRef = React.useRef(null)
-    const { scrollYProgress } = useScroll({ target: targetRef })
+    const { scrollYProgress } = useScroll({ 
+        target: targetRef,
+        offset: ["start start", "end end"]
+    })
     
-    // Transform vertical scroll to horizontal scroll
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"])
+    // Transform vertical scroll to horizontal scroll — move exactly one project width
+    const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-65vw"])
 
     const [isDesktop, setIsDesktop] = React.useState(true)
     React.useEffect(() => {
@@ -482,7 +485,7 @@ export function PortfolioSection() {
     }, [])
 
     return (
-        <section id="portfolio" ref={targetRef} className={cn("w-full bg-[#050505] relative z-20", isDesktop ? "h-[300vh]" : "py-24")}>
+        <section id="portfolio" ref={targetRef} className={cn("w-full bg-[#050505] relative z-20", isDesktop ? "h-[400vh]" : "py-24")}>
             <div className={cn("flex flex-col justify-center overflow-hidden", isDesktop ? "sticky top-0 h-screen" : "relative")}>
                 <TopographyPattern className="opacity-15" />
                 
