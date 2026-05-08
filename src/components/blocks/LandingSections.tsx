@@ -134,7 +134,7 @@ export function StatsSection() {
                         transition={{ duration: 1 }}
                     >
                         <h2 className="text-4xl md:text-5xl font-light text-white leading-tight mb-8">
-                            En el mercado premium, una web lenta <span className="font-serif italic text-white">te cuesta ventas todos los días.</span>
+                            En el mercado premium, una web lenta <span className="font-serif italic text-gold">te cuesta ventas todos los días.</span>
                         </h2>
                         <p className="text-white/60 text-lg font-light leading-relaxed max-w-xl">
                             Las plantillas genéricas destruyen tu posicionamiento. Desarrollamos con ingeniería de ultra-rendimiento para que la experiencia digital de tus clientes esté a la altura de tu servicio real.
@@ -309,7 +309,7 @@ export function WaaSSection() {
                     className="mb-20 text-center md:text-left"
                 >
                     <p className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-semibold mb-6">Nuestra Metodología</p>
-                    <h2 className="text-4xl md:text-6xl font-light text-white">Dominio <span className="font-serif italic text-white/80">Digital</span></h2>
+                    <h2 className="text-4xl md:text-6xl font-light text-white">Dominio <span className="font-serif italic text-gold">Digital</span></h2>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(250px,auto)]">
@@ -354,7 +354,7 @@ export function WaaSSection() {
                             rel="noopener noreferrer" 
                             className="group relative flex items-center gap-4 bg-white/[0.03] border border-white/10 px-10 py-5 rounded-full hover:bg-white/10 hover:border-white/20 transition-all duration-500 glass"
                         >
-                            <span className="text-white text-[11px] uppercase tracking-[0.3em] font-medium">Iniciar mi Proyecto</span>
+                            <span className="text-white text-[11px] uppercase tracking-[0.3em] font-medium">Quiero mi Web Premium</span>
                             <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black group-hover:scale-110 transition-transform duration-500">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
                                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -409,7 +409,7 @@ export function ProcessSection() {
                         >
                             <p className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-semibold mb-6">El Método Ush</p>
                             <h2 className="text-4xl md:text-6xl font-light text-white leading-tight mb-8">
-                                Precisión <br/><span className="font-serif italic text-white/50">Quirúrgica.</span>
+                                Precisión <br/><span className="font-serif italic text-gold">Quirúrgica.</span>
                             </h2>
                             <p className="text-white/60 text-lg font-light leading-relaxed max-w-sm">
                                 Un proceso probado para transformar marcas ordinarias en referencias absolutas de su sector.
@@ -455,9 +455,9 @@ export function ProcessSection() {
                             href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="relative px-12 py-6 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform duration-500 shadow-[0_20px_50px_rgba(255,255,255,0.1)]"
+                            className="relative px-10 py-5 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform duration-500 shadow-[0_20px_50px_rgba(255,255,255,0.1)]"
                         >
-                            Empezar mi Transformación
+                            Agendar Consulta Gratuita
                         </a>
                     </MagneticButton>
                 </motion.div>
@@ -494,7 +494,7 @@ export function PortfolioSection() {
                         transition={{ duration: 1 }}
                     >
                         <p className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-semibold mb-6">Selección de Proyectos</p>
-                        <h2 className="text-4xl md:text-6xl font-light text-white">Casos de <span className="font-serif italic text-white/80">Éxito</span></h2>
+                        <h2 className="text-4xl md:text-6xl font-light text-white">Casos de <span className="font-serif italic text-gold">Éxito</span></h2>
                     </motion.div>
                 </div>
 
@@ -569,7 +569,7 @@ export function TestimonialSection() {
                 >
                     <div className="w-3 h-3 bg-white/30 rotate-45 mx-auto mb-12" />
                     <p className="text-3xl md:text-5xl lg:text-6xl font-serif italic text-white leading-tight mb-16 drop-shadow-2xl max-w-5xl mx-auto">
-                        "Nuestro filtro es claro: si no podemos desarrollar la mejor web de tu sector, <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/60 to-white">no tomamos el proyecto</span>."
+                        "Nuestro filtro es claro: si no podemos desarrollar la mejor web de tu sector, <span className="text-gold">no tomamos el proyecto</span>."
                     </p>
                     <div className="inline-flex flex-col items-center">
                         <div className="w-px h-12 bg-white/20 mb-6" />
@@ -601,7 +601,7 @@ export function FooterSection() {
 
                     <h2 className="text-5xl md:text-7xl font-light text-white tracking-tight mb-8 drop-shadow-2xl">
                         Dejá de competir por precio.<br/>
-                        <span className="font-serif italic text-white">Empezá a competir por autoridad.</span>
+                        <span className="font-serif italic text-gold">Empezá a competir por autoridad.</span>
                     </h2>
                     <p className="text-white/50 text-lg font-light leading-relaxed max-w-2xl mx-auto mb-16">
                         Trabajamos con dueños de negocio que entienden el valor de una primera impresión impecable. Si buscás una web que justifique tus tarifas, hablemos.
@@ -609,7 +609,7 @@ export function FooterSection() {
                     
                     <MagneticButton distance={0.5}>
                         <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" target="_blank" rel="noopener noreferrer" className="block bg-white/5 rounded-full p-2 border border-white/10 glass backdrop-blur-md hover:border-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-700">
-                            <ShinyButton className="px-12 py-4 text-sm uppercase tracking-widest font-medium">Elevar mi Marca</ShinyButton>
+                            <ShinyButton className="px-10 py-4 text-sm uppercase tracking-widest font-medium">Hablemos de tu Proyecto</ShinyButton>
                         </a>
                     </MagneticButton>
                 </motion.div>
