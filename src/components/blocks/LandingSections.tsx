@@ -115,7 +115,7 @@ export function AuthorityRibbon() {
 
 export function ProblemSection() {
     return (
-        <section id="agency" className="w-full bg-[#0a0a0a] relative z-20">
+        <section id="agency" className="w-full relative z-20">
             <TopographyPattern className="opacity-15" />
             <TextRevealByWord text="Tu marca es de primer nivel. Pero si tu web no transmite esa autoridad, le estás regalando tus mejores clientes a la competencia." />
         </section>
@@ -150,7 +150,7 @@ export function StatsSection() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.3 }}
                         >
-                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full hover:border-[var(--gold)]/30 hover:shadow-[0_0_40px_rgba(201,169,110,0.08)] transition-all duration-700 group">
+                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full hover:border-[var(--gold)]/30 hover:shadow-[0_0_40px_rgba(232,197,71,0.15)] transition-all duration-700 group">
                                 <p className="text-6xl font-light text-white mb-2 group-hover:text-gold transition-colors duration-500">0%</p>
                                 <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Plantillas Genéricas</p>
                             </div>
@@ -163,7 +163,7 @@ export function StatsSection() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.8, delay: 0.4, type: "spring", bounce: 0.3 }}
                         >
-                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full hover:border-[var(--gold)]/30 hover:shadow-[0_0_40px_rgba(201,169,110,0.08)] transition-all duration-700 group">
+                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full hover:border-[var(--gold)]/30 hover:shadow-[0_0_40px_rgba(232,197,71,0.15)] transition-all duration-700 group">
                                 <p className="text-6xl font-light text-white mb-2 group-hover:text-gold transition-colors duration-500">&lt; 3s</p>
                                 <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Tiempo de Carga</p>
                             </div>
@@ -177,7 +177,7 @@ export function StatsSection() {
                             transition={{ duration: 0.8, delay: 0.6, type: "spring", bounce: 0.3 }}
                             className="md:col-span-2"
                         >
-                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full hover:border-[var(--gold)]/30 hover:shadow-[0_0_40px_rgba(201,169,110,0.08)] transition-all duration-700 group">
+                            <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col justify-center glass backdrop-blur-md h-full hover:border-[var(--gold)]/30 hover:shadow-[0_0_40px_rgba(232,197,71,0.15)] transition-all duration-700 group">
                                 <p className="text-6xl font-light text-white mb-2 group-hover:text-gold transition-colors duration-500">100%</p>
                                 <p className="text-xs uppercase tracking-widest text-white/50 font-medium">Arquitectura Digital a Medida</p>
                             </div>
@@ -603,15 +603,15 @@ export function FooterSection() {
                     className="text-center mb-32"
                 >
 
-                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-light text-white tracking-tight mb-8 drop-shadow-2xl">
-                        Dejá de competir por precio.<br/>
-                        <span className="font-serif italic text-gold inline-flex flex-wrap items-baseline gap-x-3 sm:gap-x-4">
-                            Empezá a competir por
+                    <h2 className="text-3xl sm:text-5xl md:text-7xl font-light text-white tracking-tight mb-8 drop-shadow-2xl">
+                        Dejá de competir por precio.<br className="hidden sm:block" />
+                        <span className="font-serif italic text-gold inline-flex flex-wrap items-baseline gap-x-2 sm:gap-x-4 mt-2 sm:mt-0">
+                            Empezá a competir <span className="whitespace-nowrap">por
                             <RotatingText 
                                 words={["autoridad.", "calidad.", "presencia.", "impacto.", "excelencia."]} 
                                 interval={2500}
-                                className="inline-flex !h-[1.2em] !w-auto text-gold"
-                            />
+                                className="inline-flex !h-[1.2em] !w-auto text-gold ml-2"
+                            /></span>
                         </span>
                     </h2>
                     <p className="text-white/50 text-lg font-light leading-relaxed max-w-2xl mx-auto mb-16">

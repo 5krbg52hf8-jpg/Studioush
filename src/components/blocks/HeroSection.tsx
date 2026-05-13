@@ -42,7 +42,7 @@ export function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <main ref={containerRef} className="relative min-h-[100dvh] bg-[#0a0a0a] flex flex-col justify-center pt-32 pb-24 md:pt-20 overflow-hidden">
+            <main ref={containerRef} className="relative min-h-[100dvh] bg-[#0a0a0a] flex flex-col justify-center pt-24 pb-12 md:pt-20 md:pb-24 overflow-hidden">
                 {/* Backgrounds - Ushuaia & Dark Overlay */}
                 <motion.div 
                     style={{ y, opacity }}
@@ -61,25 +61,25 @@ export function HeroSection() {
                 <section className="w-full relative z-10 flex flex-col items-center justify-center">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] md:w-[800px] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.8)_0%,transparent_70%)] pointer-events-none -z-10" />
 
-                    <div className="relative pt-12 md:pt-24 pb-32 w-full">
+                    <div className="relative pt-4 md:pt-24 pb-16 md:pb-32 w-full">
                         <div className="mx-auto max-w-7xl px-6 relative z-10">
                             <div className="text-center sm:mx-auto">
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <div className="mx-auto w-fit mb-8">
+                                    <div className="mx-auto w-fit mb-6 md:mb-8">
                                         <ShinyBadge>AGENCIA DIGITAL • 54°48'S 68°18'W</ShinyBadge>
                                     </div>
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <h1 className="mt-6 max-w-5xl mx-auto text-center text-[2.25rem] leading-[1.15] sm:text-6xl md:text-7xl lg:mt-12 xl:text-[5.5rem] font-medium tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
-                                        <span className="block">Desarrollamos</span>
-                                        <RotatingText words={rotatingOptions} className="text-gold" />
-                                        <span className="block">desde el Fin del Mundo.</span>
+                                    <h1 className="mt-4 md:mt-6 max-w-5xl mx-auto text-center text-[1.85rem] leading-[1.2] sm:text-5xl md:text-7xl lg:mt-12 xl:text-[5.5rem] font-medium tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
+                                        <span className="block mb-1 sm:mb-0">Desarrollamos</span>
+                                        <RotatingText words={rotatingOptions} className="text-gold my-1 sm:my-0" />
+                                        <span className="block mt-1 sm:mt-0">desde el Fin del Mundo.</span>
                                     </h1>
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <p className="mx-auto mt-6 max-w-2xl text-balance text-base md:text-xl text-white font-light leading-relaxed drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+                                    <p className="mx-auto mt-4 md:mt-6 max-w-2xl text-balance text-sm md:text-xl text-white font-light leading-relaxed drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
                                         Diseño web a medida y posicionamiento premium para negocios que no compiten por precio.
                                     </p>
                                 </AnimatedGroup>
@@ -89,14 +89,14 @@ export function HeroSection() {
                                         container: { visible: { transition: { staggerChildren: 0.1, delayChildren: 0.8 } } },
                                         ...transitionVariants,
                                     }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-6 md:flex-row">
+                                    className="mt-8 md:mt-12 flex flex-col items-center justify-center gap-4 md:gap-6 md:flex-row">
                                     <MagneticButton distance={0.4}>
                                         <div key={1} className="bg-white/5 rounded-full p-1 border border-white/10 glass backdrop-blur-md">
                                             <ShinyButton><a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Solicitar Información</a></ShinyButton>
                                         </div>
                                     </MagneticButton>
                                     <MagneticButton distance={0.3}>
-                                        <a href="#portfolio" key={2} className="relative inline-flex items-center justify-center rounded-full px-8 py-3.5 bg-white/5 backdrop-blur-3xl border border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-xs uppercase tracking-[0.2em] font-medium group overflow-hidden">
+                                        <a href="#portfolio" key={2} className="relative inline-flex items-center justify-center rounded-full px-8 py-3 bg-white/5 backdrop-blur-3xl border border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-xs uppercase tracking-[0.2em] font-medium group overflow-hidden">
                                             <span className="absolute inset-0 w-full h-full bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                             <span className="relative z-10 text-nowrap">Ver Casos de Éxito</span>
                                         </a>
