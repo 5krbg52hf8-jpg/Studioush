@@ -79,15 +79,14 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
               className="block will-change-[filter,opacity,transform]"
             >
               {line.highlight ? (
-                <span
+                <SparklesText
+                  text={line.text}
                   className={cn(
                     "text-gold-shimmer font-serif italic font-medium",
                     "text-[1.6rem] sm:text-[2rem] md:text-5xl lg:text-6xl xl:text-7xl",
                     "leading-[1.3] tracking-tight"
                   )}
-                >
-                  {line.text}
-                </span>
+                />
               ) : (
                 <span
                   className={cn(
