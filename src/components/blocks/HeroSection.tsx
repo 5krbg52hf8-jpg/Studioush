@@ -72,9 +72,9 @@ export function HeroSection() {
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <h1 className="mt-4 md:mt-6 max-w-5xl mx-auto text-center text-[1.85rem] leading-[1.2] sm:text-5xl md:text-7xl lg:mt-12 xl:text-[5.5rem] font-medium tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
+                                    <h1 className="mt-4 md:mt-6 max-w-5xl mx-auto text-center text-[1.85rem] leading-[1.2] sm:text-5xl md:text-7xl lg:mt-12 xl:text-[5.5rem] font-medium tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)] overflow-visible pb-3">
                                         <span className="block mb-1 sm:mb-0">Diseño web que</span>
-                                        <RotatingText words={rotatingOptions} className="text-gold my-1 sm:my-0" />
+                                        <RotatingText words={rotatingOptions} className="text-gold mt-1 sm:mt-0" />
                                     </h1>
                                 </AnimatedGroup>
 

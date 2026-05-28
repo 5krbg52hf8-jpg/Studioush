@@ -39,6 +39,23 @@ export function Logo({ className, size }: LogoProps) {
             width: '100%'
           }}
         />
+
+        {/* Capa de brillo ambiente — pulso dorado suave y continuo */}
+        <div 
+          className="absolute inset-0 pointer-events-none mix-blend-plus-lighter logo-gold-ambient"
+          style={{
+            maskImage: 'url(/studio-ush-logo.svg)',
+            WebkitMaskImage: 'url(/studio-ush-logo.svg)',
+            maskSize: 'contain',
+            WebkitMaskSize: 'contain',
+            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: 'no-repeat',
+            maskPosition: 'center',
+            WebkitMaskPosition: 'center',
+            height: size ? size : '100%',
+            width: '100%'
+          }}
+        />
       </div>
     </div>
   )
