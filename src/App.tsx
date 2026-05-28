@@ -14,6 +14,7 @@ import {
 import { TermsPage } from './components/pages/TermsPage'
 import { PrivacyPage } from './components/pages/PrivacyPage'
 import { CookieBanner } from './components/ui/cookie-banner'
+import { PricingSection } from './components/blocks/PricingSection'
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.hash)
@@ -43,6 +44,7 @@ function App() {
       <WaaSSection />
       <ProcessSection />
       <PortfolioSection />
+      <PricingSection />
       <TestimonialSection />
       <FooterSection />
       <WhatsAppFloating />

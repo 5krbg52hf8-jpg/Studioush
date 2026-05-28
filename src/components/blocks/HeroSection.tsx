@@ -33,10 +33,11 @@ export function HeroSection() {
     const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.4])
 
     const rotatingOptions = [
-        "Webs Premium",
-        "Diseño a Medida",
-        "Tiendas Online",
-        "Sitios Exclusivos"
+        "atrae clientes.",
+        "cierra ventas.",
+        "eleva tu marca.",
+        "trabaja 24/7.",
+        "genera confianza."
     ]
 
     return (
@@ -72,15 +73,14 @@ export function HeroSection() {
 
                                 <AnimatedGroup variants={transitionVariants}>
                                     <h1 className="mt-4 md:mt-6 max-w-5xl mx-auto text-center text-[1.85rem] leading-[1.2] sm:text-5xl md:text-7xl lg:mt-12 xl:text-[5.5rem] font-medium tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
-                                        <span className="block mb-1 sm:mb-0">Desarrollamos</span>
+                                        <span className="block mb-1 sm:mb-0">Diseño web que</span>
                                         <RotatingText words={rotatingOptions} className="text-gold my-1 sm:my-0" />
-                                        <span className="block mt-1 sm:mt-0">desde el Fin del Mundo.</span>
                                     </h1>
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
                                     <p className="mx-auto mt-4 md:mt-6 max-w-2xl text-balance text-sm md:text-xl text-white font-light leading-relaxed drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                                        Diseño web a medida y posicionamiento premium para negocios que no compiten por precio.
+                                        Olvidate de las páginas que nadie visita. Creamos sitios web rápidos y persuasivos, diseñados para que dejes de perder ventas.
                                     </p>
                                 </AnimatedGroup>
 
@@ -92,13 +92,13 @@ export function HeroSection() {
                                     className="mt-8 md:mt-12 flex flex-col items-center justify-center gap-4 md:gap-6 md:flex-row">
                                     <MagneticButton distance={0.4}>
                                         <div key={1} className="bg-white/5 rounded-full p-1 border border-white/10 glass backdrop-blur-md">
-                                            <ShinyButton><a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Solicitar Información</a></ShinyButton>
+                                            <ShinyButton><a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Hablemos de tu Web</a></ShinyButton>
                                         </div>
                                     </MagneticButton>
                                     <MagneticButton distance={0.3}>
                                         <a href="#portfolio" key={2} className="relative inline-flex items-center justify-center rounded-full px-8 py-3 bg-white/5 backdrop-blur-3xl border border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-xs uppercase tracking-[0.2em] font-medium group overflow-hidden">
                                             <span className="absolute inset-0 w-full h-full bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                            <span className="relative z-10 text-nowrap">Ver Casos de Éxito</span>
+                                            <span className="relative z-10 text-nowrap">Ver Trabajos</span>
                                         </a>
                                     </MagneticButton>
                                 </AnimatedGroup>
@@ -194,7 +194,7 @@ export const HeroHeader = () => {
                         </ul>
                         <MagneticButton distance={0.2}>
                             <Button asChild size="sm" className="rounded-full bg-white text-black hover:bg-gray-200 shadow-lg text-[10px] uppercase tracking-widest px-6 transition-transform hover:scale-105">
-                                <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Agendar Sesión</a>
+                                <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Hacer mi Web</a>
                             </Button>
                         </MagneticButton>
                     </div>
@@ -234,7 +234,7 @@ export const HeroHeader = () => {
                                     ))}
                                 </ul>
                                 <Button asChild className="rounded-full bg-white text-black w-full text-xs uppercase tracking-widest py-5 font-bold shadow-2xl mt-2">
-                                    <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Agendar Sesión</a>
+                                    <a href="https://wa.me/5492901584322?text=Quiero%20mas%20informacion%20sobre%20el%20servicio%20de%20dise%C3%B1o%20web%20premium" onClick={openWhatsApp}>Hacer mi Web</a>
                                 </Button>
                             </div>
                         </motion.div>
